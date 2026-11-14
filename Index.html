@@ -1,0 +1,944 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Children's Day | Krishna Learning Academy</title>
+
+<style>
+
+:root {
+    --purple: #5b4bdb;
+    --pink: #ff668c;
+    --yellow: #ffd45c;
+    --ink: #202044;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--ink);
+    background: #fffaf2;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7%;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 20px #30245a12;
+}
+
+.brand {
+    font-weight: 900;
+    font-size: 1.15rem;
+    color: var(--purple);
+}
+
+.brand span {
+    color: var(--pink);
+}
+
+nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 15px;
+}
+
+/* HERO */
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(
+        135deg,
+        #e9e7ff,
+        #fff0f5 55%,
+        #fff7d9
+    );
+}
+
+.pill {
+    display: inline-block;
+    background: white;
+    border-radius: 99px;
+    padding: 10px 18px;
+    font-weight: 800;
+    color: var(--purple);
+}
+
+h1 {
+    font-size: clamp(2.8rem, 7vw, 5.7rem);
+    line-height: 1;
+    margin: 25px 0;
+    color: var(--purple);
+}
+
+h1 em {
+    color: var(--pink);
+    font-style: normal;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 28px;
+    line-height: 1.8;
+    color: #4c4a68;
+}
+
+/* BUTTONS */
+
+.btn {
+    border: none;
+    border-radius: 999px;
+    padding: 14px 24px;
+    background: var(--purple);
+    color: white;
+    font-weight: 900;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+.btn.alt {
+    background: white;
+    color: var(--purple);
+    border: 2px solid #e5dfff;
+}
+
+.floaties {
+    font-size: 2rem;
+    margin-top: 30px;
+    letter-spacing: 15px;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 70px 7%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 15px;
+}
+
+.sub {
+    text-align: center;
+    color: #66627d;
+    max-width: 680px;
+    margin: 0 auto 38px;
+    line-height: 1.7;
+}
+
+/* MOTIVATION CARDS */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    border: 1px solid #f0eafa;
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 10px 28px #392a6510;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card .emoji {
+    font-size: 2.7rem;
+}
+
+.card h3 {
+    margin: 15px 0 10px;
+}
+
+.card p {
+    color: #68657c;
+    line-height: 1.7;
+}
+
+/* QUOTE */
+
+.quote {
+    background: var(--ink);
+    color: white;
+    text-align: center;
+    border-radius: 28px;
+    padding: 45px 25px;
+    max-width: 950px;
+    margin: auto;
+}
+
+.quote blockquote {
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 800;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.quote small {
+    color: #d7d2ff;
+    font-weight: 700;
+}
+
+/* FUN ZONE */
+
+.game-wrap {
+    max-width: 950px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.game {
+    background: white;
+    border-radius: 24px;
+    padding: 28px;
+    border: 1px solid #eee7ff;
+    box-shadow: 0 10px 28px #392a6510;
+}
+
+.game h3 {
+    margin-bottom: 20px;
+}
+
+.question {
+    font-weight: 800;
+    font-size: 1.15rem;
+    min-height: 60px;
+    line-height: 1.5;
+}
+
+.answers {
+    display: grid;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.answers button {
+    background: #f5f2ff;
+    border: 2px solid transparent;
+    padding: 14px;
+    border-radius: 13px;
+    text-align: left;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--ink);
+}
+
+.answers button:hover {
+    border-color: var(--purple);
+}
+
+.feedback {
+    min-height: 50px;
+    font-weight: 800;
+    color: var(--purple);
+    line-height: 1.5;
+    margin: 12px 0;
+}
+
+/* PERSONAL WISH */
+
+.wish {
+    background: linear-gradient(
+        120deg,
+        #fff0f5,
+        #f0efff
+    );
+    text-align: center;
+}
+
+.wish-box {
+    max-width: 760px;
+    margin: auto;
+}
+
+.wish-box input {
+    width: min(100%, 420px);
+    padding: 15px;
+    border: 2px solid #e2dcff;
+    border-radius: 14px;
+    font-size: 1rem;
+    margin: 15px 0;
+}
+
+.wish-result {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 20px auto;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #e9e7ff,
+        #fff0f5
+    );
+}
+
+.contact h2 {
+    color: var(--purple);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 18px;
+}
+
+.contact p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.contact-number {
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin: 25px 0;
+    color: var(--ink);
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.contact-buttons a {
+    text-decoration: none;
+    padding: 15px 28px;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+    background: var(--purple);
+    transition: .3s;
+}
+
+.contact-buttons a:hover {
+    transform: translateY(-4px);
+}
+
+.contact-buttons .whatsapp {
+    background: #25D366;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px 15px;
+    background: #211f46;
+    color: white;
+}
+
+footer strong {
+    color: var(--yellow);
+    font-size: 1.2rem;
+}
+
+footer p {
+    color: #d7d4ef;
+    margin-top: 10px;
+}
+
+/* CONFETTI */
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    width: 10px;
+    height: 14px;
+    z-index: 20;
+    pointer-events: none;
+    animation: fall 2.7s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: .2;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:760px) {
+
+    nav {
+        padding: 15px 4%;
+    }
+
+    .brand {
+        font-size: .95rem;
+    }
+
+    nav a {
+        margin-left: 8px;
+        font-size: .75rem;
+    }
+
+    .grid,
+    .game-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 55px 5%;
+    }
+
+    .hero {
+        padding: 65px 18px;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-buttons a {
+        width: 230px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="brand">
+        KLA <span>✦</span> Krishna Learning Academy
+    </div>
+
+    <div>
+        <a href="#fun">Fun Zone</a>
+        <a href="#wish">My Wish</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<header class="hero">
+
+    <span class="pill">
+        14 November · A day for every dreamer
+    </span>
+
+    <h1>
+        Happy <em>Children's</em><br>
+        Day! 🎈
+    </h1>
+
+    <p>
+        Dear students, your curiosity is your superpower.
+
+        Keep asking questions, keep trying new things,
+        and never stop believing in the amazing person
+        you are becoming.
+
+        You are special, talented and capable of achieving
+        wonderful things!
+    </p>
+
+    <button class="btn" onclick="celebrate()">
+        Let's Celebrate! 🎉
+    </button>
+
+    <div class="floaties">
+        📚 ⭐ 🧸 🎨 🚀
+    </div>
+
+</header>
+
+<!-- MOTIVATION SECTION -->
+
+<section>
+
+    <h2 class="section-title">
+        A Little Reminder For Our Bright Stars ✨
+    </h2>
+
+    <p class="sub">
+        At Krishna Learning Academy, we believe learning
+        should build confidence, courage and kindness,
+        not just marks.
+    </p>
+
+    <div class="grid">
+
+        <article class="card">
+
+            <div class="emoji">🌱</div>
+
+            <h3>Grow At Your Pace</h3>
+
+            <p>
+                Every expert was once a beginner.
+                Small steps every day lead to big achievements.
+            </p>
+
+        </article>
+
+        <article class="card">
+
+            <div class="emoji">🦸</div>
+
+            <h3>Be Brave Enough To Try</h3>
+
+            <p>
+                Mistakes are not failures.
+                They help your brain learn something new.
+                Never be afraid of trying.
+            </p>
+
+        </article>
+
+        <article class="card">
+
+            <div class="emoji">💛</div>
+
+            <h3>Be Kind And Curious</h3>
+
+            <p>
+                Ask questions, help a friend, respect others
+                and stay curious about the world.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- MOTIVATIONAL QUOTE -->
+
+<section>
+
+    <div class="quote">
+
+        <blockquote>
+            "You are not too small to make a big difference.
+            Your ideas, effort and kindness matter."
+        </blockquote>
+
+        <small>
+            — With Love, Team Krishna Learning Academy ❤️
+        </small>
+
+    </div>
+
+</section>
+
+<!-- FUN ZONE -->
+
+<section id="fun">
+
+    <h2 class="section-title">
+        🎮 KLA Fun Zone
+    </h2>
+
+    <p class="sub">
+        Take a tiny brain break!
+        Play, learn and enjoy this special day.
+    </p>
+
+    <div class="game-wrap">
+
+        <!-- QUIZ -->
+
+        <div class="game">
+
+            <h3>🧠 Quick Quiz</h3>
+
+            <div class="question" id="question">
+                Which habit helps you learn better?
+            </div>
+
+            <div class="answers" id="answers">
+
+                <button onclick="answer(0)">
+                    Giving up quickly
+                </button>
+
+                <button onclick="answer(1)">
+                    Practising a little every day
+                </button>
+
+                <button onclick="answer(2)">
+                    Being afraid to ask questions
+                </button>
+
+            </div>
+
+            <div class="feedback" id="feedback"></div>
+
+            <button class="btn alt" onclick="nextQuestion()">
+                Next Question ↗
+            </button>
+
+        </div>
+
+        <!-- DAILY CHALLENGE -->
+
+        <div class="game">
+
+            <h3>🌟 Your Daily Superpower</h3>
+
+            <p style="color:#68657c;line-height:1.7;margin-bottom:20px">
+                Tap the button and discover a positive challenge
+                for yourself.
+            </p>
+
+            <div class="question" id="challenge">
+                Ready to discover your superpower?
+            </div>
+
+            <br>
+
+            <button class="btn" onclick="newChallenge()">
+                Reveal My Challenge ✨
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PERSONAL WISH -->
+
+<section class="wish" id="wish">
+
+    <div class="wish-box">
+
+        <h2 class="section-title">
+            Send Yourself A Little Cheer 💌
+        </h2>
+
+        <p class="sub">
+            Enter your name and receive a special
+            motivational message from KLA.
+        </p>
+
+        <input
+            id="studentName"
+            maxlength="30"
+            placeholder="Enter your name"
+        >
+
+        <br>
+
+        <button class="btn" onclick="makeWish()">
+            Make My Wish ✨
+        </button>
+
+        <div class="wish-result" id="wishResult"></div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+
+<section class="contact" id="contact">
+
+    <h2>
+        📞 Contact Krishna Learning Academy
+    </h2>
+
+    <p>
+        Have questions about admissions, classes or courses?
+
+        We are always happy to help students and parents!
+    </p>
+
+    <div class="contact-number">
+        📱 8709647934
+    </div>
+
+    <div class="contact-buttons">
+
+        <a href="tel:+918709647934">
+            📞 Call Us
+        </a>
+
+        <a
+            class="whatsapp"
+            href="https://wa.me/918709647934?text=Hello%20Krishna%20Learning%20Academy%2C%20I%20want%20to%20know%20more%20about%20your%20classes."
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            💬 WhatsApp Us
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <strong>Krishna Learning Academy</strong>
+
+    <p>
+        Learn Smart, Achieve Big.
+    </p>
+
+    <p>
+        Happy Children's Day! 🎈
+    </p>
+
+    <p>
+        Keep Learning, Keep Growing! 📚
+    </p>
+
+    <p>
+        Contact: 8709647934
+    </p>
+
+    <p>
+        © 2026 Krishna Learning Academy.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+// QUIZ QUESTIONS
+
+const questions = [
+
+    {
+        q: "Which habit helps you learn better?",
+        a: [
+            "Giving up quickly",
+            "Practising a little every day",
+            "Being afraid to ask questions"
+        ],
+        c: 1,
+        why: "Consistent practice makes you stronger."
+    },
+
+    {
+        q: "What should you do when a question feels difficult?",
+        a: [
+            "Try a new method and ask for help",
+            "Stop trying forever",
+            "Hide the question"
+        ],
+        c: 0,
+        why: "Asking for help is a sign of courage."
+    },
+
+    {
+        q: "What makes a great classmate?",
+        a: [
+            "Laughing at mistakes",
+            "Keeping every idea to yourself",
+            "Encouraging and helping others"
+        ],
+        c: 2,
+        why: "Kindness makes everyone better."
+    },
+
+    {
+        q: "What is a good way to reach a big goal?",
+        a: [
+            "Wait for magic",
+            "Break it into small steps",
+            "Never make a plan"
+        ],
+        c: 1,
+        why: "Small steps create big progress."
+    }
+
+];
+
+let qi = 0;
+
+// DISPLAY QUESTION
+
+function renderQuestion() {
+
+    let q = questions[qi];
+
+    document.getElementById("question").textContent = q.q;
+
+    document.getElementById("answers").innerHTML =
+        q.a.map((x, i) =>
+            `<button onclick="answer(${i})">${x}</button>`
+        ).join("");
+
+    document.getElementById("feedback").textContent = "";
+
+}
+
+// CHECK ANSWER
+
+function answer(i) {
+
+    let q = questions[qi];
+
+    if (i === q.c) {
+
+        document.getElementById("feedback").textContent =
+            "🎉 Correct! " + q.why;
+
+    } else {
+
+        document.getElementById("feedback").textContent =
+            "💪 Nice try! Have another go. You can do it!";
+
+    }
+
+}
+
+// NEXT QUESTION
+
+function nextQuestion() {
+
+    qi = (qi + 1) % questions.length;
+
+    renderQuestion();
+
+}
+
+// DAILY CHALLENGE
+
+const challenges = [
+
+    "Read 5 pages of something you enjoy. 📖",
+
+    "Ask one question you've always wondered about. 💡",
+
+    "Teach a friend one thing you learned. 🤝",
+
+    "Try a problem that looks a little difficult. 🧩",
+
+    "Write down one thing you are proud of. 🌟",
+
+    "Make someone smile today. 😊"
+
+];
+
+function newChallenge() {
+
+    let random = Math.floor(
+        Math.random() * challenges.length
+    );
+
+    document.getElementById("challenge").textContent =
+        challenges[random];
+
+}
+
+// PERSONAL WISH
+
+function makeWish() {
+
+    let name = document
+        .getElementById("studentName")
+        .value.trim();
+
+    if (!name) {
+        name = "Superstar";
+    }
+
+    document.getElementById("wishResult").textContent =
+        `🌈 ${name}, you are capable of amazing things.
+        Believe in yourself and keep shining! ⭐`;
+
+    celebrate();
+
+}
+
+// CELEBRATION CONFETTI
+
+function celebrate() {
+
+    for (let i = 0; i < 65; i++) {
+
+        let e = document.createElement("i");
+
+        e.className = "confetti";
+
+        e.style.left =
+            Math.random() * 100 + "vw";
+
+        e.style.background = [
+            "#ff668c",
+            "#5b4bdb",
+            "#ffd45c",
+            "#49cba0",
+            "#54a8ff"
+        ][i % 5];
+
+        e.style.animationDelay =
+            Math.random() * 0.8 + "s";
+
+        document.body.appendChild(e);
+
+        setTimeout(() => e.remove(), 3600);
+
+    }
+
+}
+
+// INITIALIZE QUIZ
+
+renderQuestion();
+
+</script>
+
+</body>
+</html>
